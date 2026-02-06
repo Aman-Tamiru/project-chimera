@@ -27,3 +27,22 @@ This document defines the behavioral requirements for the Chimera Agent. These r
 The agent must implement a "Status Heartbeat." 
 - Frequency: Every 60 minutes.
 - Payload: Current task, wallet balance, and availability status.
+## 5. Acceptance Criteria (Gherkin Style)
+
+### Feature: On-chain Identity Verification
+**Scenario**: Agent verifies wallet balance on Base Sepolia.
+- **Given** the agent has a valid `aman-chimera.basetest.eth` identity.
+- **When** `check_vitals()` is executed.
+- **Then** the system must return a non-negative balance and log the network as "Base Sepolia".
+
+### Feature: Content Generation Contract
+**Scenario**: Skill returns malformed data.
+- **Given** the `content_generation` skill receives a trend.
+- **When** the output JSON is missing the `hashtags` key.
+- **Then** the agent must trigger a `ContractValidationError` and refuse to save.
+
+### Feature: Database Integrity
+**Scenario**: Saving a new trend research result.
+- **Given** the `trend_research` skill has successfully fetched data.
+- **When** the data is passed to the ingestion layer.
+- **Then** the system must validate the schema defined in `specs/database.md` before committing to the DB.
