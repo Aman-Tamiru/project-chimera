@@ -1,21 +1,26 @@
-# 🤖 Project Chimera: Autonomous Influencer Factory
+# 🦁 Project Chimera: Autonomous Influencer Factory
+**Governed AI Orchestrator on Base Sepolia**
 
-**Phase 1: Foundation & Governance** **Architect:** Aman-Tamiru
+Project Chimera is a spec-driven autonomous agent framework. It shifts the paradigm from "Vibe Coding" to **Hard Governance**, where an agent’s actions are strictly bounded by technical blueprints and on-chain identity verification.
 
 ---
 
-## 🌟 Executive Summary
-Project Chimera is an autonomous system designed to act as a digital influencer. It senses real-time market trends using **OpenClaw** and possesses independent economic agency via **Coinbase AgentKit**. This project follows a **Spec-Driven Development (SDD)** and **Test-Driven Development (TDD)** methodology.
+## 🗺️ Project Map
+This directory structure enforces the separation of concerns and ensures the agent can navigate its own codebase without "guessing."
 
-## 🏗️ Architectural Framework
-To ensure high-fidelity engineering, this project implements:
-- **Governance Telemetry:** Connected via Tenx MCP Sense to stream architectural decisions for real-time auditability.
-- **Strict Specification:** All system logic is ratified in `specs/technical.md` before implementation.
-- **Verification Layer:** A robust testing suite located in `tests/` to validate agent skills and wallet connectivity.
-
-## 🛠️ Tech Stack
-- **Engine:** Python 3.12
-- **Environment:** Docker (Containerized Parity)
-- **Intelligence:** LLM-driven orchestration via Cursor & MCP
-- **Blockchain:** Coinbase AgentKit (MPC Wallets)
-
+```text
+project-chimera/
+├── .cursor/rules/          # ⚖️ Hard Governance (MDC Rules)
+│   └── chimera-governance.mdc
+├── specs/                  # 📐 The Source of Truth (Blueprints)
+│   ├── technical.md        # Technical architecture
+│   ├── functional.md       # Given/When/Then acceptance criteria
+│   └── database.md         # ERDs and Schema definitions
+├── skills/                 # 🛠️ Skill Factory (Modular Tools)
+│   ├── trend_research/     # JSON Contract for data sensing
+│   └── content_generation/ # JSON Contract for LLM output
+├── tests/                  # 🧪 TDD Suite (Pytest/Unittest)
+├── frontend/               # 📊 Streamlit Vitals Dashboard
+├── Dockerfile              # 🐳 Multi-stage build (Verification layer)
+├── Makefile                # ⚡ Automation targets (setup, test, build)
+└── chimera_brain.py        # 🧠 Core Logic & On-chain Identity
